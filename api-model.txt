@@ -1,0 +1,180 @@
+Versioning:
+
+/api/v1/facebook/auth
+/api/v2/fb/auth
+
+/api/moon/fb/auth
+/api/sun/fb/auth
+
+
+API Design/Model/Contract:
+
+/api/v1/
+
+create
+	- one at a time : new car, new model, air bag support, mileage
+	- in bulk
+		- same company
+		- different companies
+
+	URL:
+		/api/v1/cars
+	
+	Input: (Body/Payload)
+	[{
+		company: "",
+		model: "",
+		color: "",
+		price: "",
+		engineDetails:{ },
+		maxSpeed: 190,
+		mileage:{ city: , highway: }
+	},{
+		company: "",
+		model: "",
+		color: "",
+		price: "",
+		engineDetails:{ },
+		maxSpeed: 190,
+		mileage:{ city: , highway: }
+	},{
+		company: "",
+		model: "",
+		color: "",
+		price: "",
+		engineDetails:{ },
+		maxSpeed: 190,
+		mileage:{ city: , highway: }
+	}]
+
+	Who can create:
+		- admin (role, permission based)
+		- authorization 
+
+	Headers:
+		- Content-Type: application/JSON
+		- Cookies
+
+	Query Strings:
+		- ?
+
+	Method:
+		POST
+	
+	Response:
+		- status code
+		- response data
+
+
+
+
+car details
+	- one car
+	- all cars
+	- all cars from a specific company
+	- list all cars with minimal details
+GET METHOD:
+        ALL cars:
+
+        URL:
+		/api/v1/cars
+
+        Who can get:
+		- once singup their can get car details.
+
+       Query Strings:
+		- ?
+
+	Method:
+		GET
+	
+	Response:
+		- status code
+		- response data
+ONE CAR:
+      
+      URL:
+		/api/v1/car
+
+        Who can get:
+		- once singup their can get car details.
+
+       Query Strings:
+		- ?company:""
+
+	Method:
+		GET
+	
+	Response:
+		- status code
+		- response data
+		
+        
+
+update car details
+	- engine
+	- color
+	- one car at a time
+	- bulk update
+	- based on criteria
+    
+    URL:
+		/api/v1/cars
+	
+	Input: (Body/Payload)
+	{
+		company: "",
+		model: "",
+		color: "",
+		price: "",
+		engineDetails:{ },
+		maxSpeed: 190,
+		mileage:{ city: , highway: }
+	}
+	
+
+	Who can update:
+		- admin (role, permission based)
+		- authorization 
+
+	Headers:
+		- Content-Type: application/JSON
+		- Cookies
+
+	Query Strings:
+		- ?
+
+	Method:
+		PUT
+	
+	Response:
+		- status code
+		- response data
+
+
+delete
+	- remove a car from our inventory
+	- remove cars in bulk
+	- remove all cars from one company
+	- based on some criteria, diesel cars
+      
+    URL:
+		/api/v1/cars
+
+        Who can delete:
+		-Admin(role,permision based)
+                -authorization
+
+       Query Strings:
+		- ?company:""
+
+	Method:
+		DELETE	
+	
+	Response:
+		- status code
+		- response data
+
+
+
+
